@@ -28,7 +28,7 @@ Using docker:
 
     docker run -p 8080:8080 erxbout/barcodeserver
 
-Example docker-compose.yml:
+Example docker-compose.yml with custom port 8000:
 
 ``` yaml
 version: "3.4"
@@ -42,9 +42,6 @@ services:
       PORT: 8000
 
 ```
-
-It will save generated code at public folder. You can delete generated artefacts and if requested server will regenerate.
-
 
 ## License 
 
