@@ -4,9 +4,9 @@ Simple HTTP API around [https://github.com/boombuler/barcode](https://github.com
 
 ## Api Usage
 
-Simply issue a get using the type of barcode desired as path and the content as queryString content and it will return a redirect to generated png.
+Simply issue a get using the type of barcode desired as path and the content as queryString content and it will return a generated png.
 
-    $ curl -v http://localhost:8080/datamatrix?content=Whatever%20data
+    curl -v http://localhost:8080/datamatrix?content=Whatever%20data
 
 Available types:
 
@@ -26,13 +26,26 @@ Using the binary, download from the release page and run the binary and it will 
 
 Using docker:
 
-    $ docker run -p 8080:8080 -v /tmp/barcodes:/opt/barcode/public diogok/barcodeserver
+    docker run -p 8080:8080 erxbout/barcodeserver
 
+Example docker-compose.yml:
+
+``` yaml
+version: "3.4"
+
+services:
+  barcodeserver:
+    image: erxbout/barcodeserver
+    ports:
+      - 8000:8000
+    environment: 
+      PORT: 8000
+
+```
 
 It will save generated code at public folder. You can delete generated artefacts and if requested server will regenerate.
 
 
 ## License 
 
-MIT , same as [https://github.com/boombuler/barcode](https://github.com/boombuler/barcode).
-
+MIT, same as [https://github.com/boombuler/barcode](https://github.com/boombuler/barcode).

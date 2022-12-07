@@ -17,15 +17,13 @@ arm: barcodeserver-arm
 
 docker: amd64
 	cp barcodeserver-amd64 barcodeserver
-	docker build -t diogok/$(project) .
+	docker build -t erxbout/$(project) .
 	rm barcodeserver
 
 docker-arm: arm
 	cp barcodeserver-arm barcodeserver
-	docker build -t diogok/$(project):arm .
+	docker build -t erxbout/$(project):arm .
 	rm barcodeserver
 
 push:
-	docker push diogok/$(project)
-
-
+	docker push erxbout/$(project)
