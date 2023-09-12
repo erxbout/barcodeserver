@@ -14,14 +14,11 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - name: configure
-      run: ./configure
+    - name: init go
+      run: go mod init barcodeserver.go && go mod tidy
 
-    - name: Install dependencies
-      run: make
+    - name: Make binaries
+      run: make barcodeserver-amd64
 
-    - name: Run check
-      run: make check
-
-    - name: Run distcheck
-      run: make distcheck
+    - name: Make docker
+      run: make docker
