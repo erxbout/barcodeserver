@@ -1,4 +1,4 @@
-FROM alpine:3.1
+FROM alpine:3.20
 
 RUN mkdir -p /opt/barcode/public
 VOLUME /opt/barcode/public
